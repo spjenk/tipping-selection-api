@@ -1,5 +1,6 @@
-package com.litereaction.tipping;
+package com.litereaction.tipping.model;
 
+import com.litereaction.tipping.model.Selection;
 import org.springframework.data.annotation.Id;
 
 import java.util.Arrays;
@@ -11,9 +12,9 @@ public class TipSelection {
 
     private String user;
 
-    private String  meeting;
+    private String meetingId;
 
-    private String[] selections;
+    private Selection[] selections;
 
     public String getId() {
         return id;
@@ -31,15 +32,15 @@ public class TipSelection {
         this.user = user;
     }
 
-    public String getMeeting() { return meeting; }
+    public String getMeetingId() { return meetingId; }
 
-    public void setMeeting(String meeting) { this.meeting = meeting; }
+    public void setMeetingId(String meetingId) { this.meetingId = meetingId; }
 
-    public String[] getSelections() {
+    public Selection[] getSelections() {
         return selections;
     }
 
-    public void setSelections(String[] selections) {
+    public void setSelections(Selection[] selections) {
         this.selections = selections;
     }
 
@@ -48,7 +49,10 @@ public class TipSelection {
         return "TipSelection{" +
                 "id='" + id + '\'' +
                 ", user='" + user + '\'' +
+                ", meetingId='" + meetingId + '\'' +
                 ", selections=" + Arrays.toString(selections) +
                 '}';
     }
 }
+
+
